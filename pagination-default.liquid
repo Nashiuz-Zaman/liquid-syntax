@@ -1,0 +1,9 @@
+{% paginate collection.products by 10 %}
+  <!-- Your paginated content goes here -->
+  {% for product in collection.products %}
+    {{ product.title }}
+  {% endfor %}
+
+  <!-- Pagination navigation -->
+  {{ paginate | default_pagination }}
+{% endpaginate %}

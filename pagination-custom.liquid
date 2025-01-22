@@ -1,0 +1,28 @@
+{% paginate collection.products by 10 %}
+  <ul>
+    {% for product in collection.products %}
+      <li>{{ product.title }}</li>
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    <!-- Previous Link -->
+    {% if paginate.previous %}
+      <a href="{{ paginate.previous.url }}">Previous</a>
+    {% endif %}
+
+    <!-- Page Numbers -->
+    {% for page in (1..paginate.pages) %}
+      {% if page == paginate.current_page %}
+        <span>{{ page }}</span>
+      {% else %}
+        <a href="{{ paginate | page_url: page }}">{{ page }}</a>
+      {% endif %}
+    {% endfor %}
+
+    <!-- Next Link -->
+    {% if paginate.next %}
+      <a href="{{ paginate.next.url }}">Next</a>
+    {% endif %}
+  </div>
+{% endpaginate %}
