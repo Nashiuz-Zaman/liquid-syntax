@@ -1,0 +1,53 @@
+{% comment %}
+  Conditionals
+{% endcomment %}
+
+{% assign value = 10 %}
+{% assign another_value = 20 %}
+{% assign string = 'Liquid is great' %}
+
+<!-- Basic if-else -->
+{% if value == 10 %}
+  Value is 10
+{% else %}
+  Value is not 10
+{% endif %}
+
+<!-- if-elsif-else -->
+{% if value > another_value %}
+  Value is greater than another_value
+{% elsif value == another_value %}
+  Value is equal to another_value
+{% else %}
+  Value is less than another_value
+{% endif %}
+
+<!-- unless (negative if like ! in js) -->
+{% unless value > another_value %}
+  Value is not greater than another_value
+{% endunless %}
+
+<!-- Checking multiple conditions -->
+{% if value > 5 and another_value < 30 %}
+  Both conditions are true
+{% endif %}
+
+{% if value > 15 or another_value < 25 %}
+  At least one condition is true
+{% endif %}
+
+<!-- String conditions -->
+{% if string contains 'Liquid' %}
+  The string mentions "Liquid"
+{% endif %}
+
+<!-- Empty checks -->
+{% if product.tags == empty %}
+  The array is empty
+{% else %}
+  The array is not empty
+{% endif %}
+
+{% if product.title != blank %}
+  The string is not blank
+{% endif %}

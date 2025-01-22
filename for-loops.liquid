@@ -1,0 +1,66 @@
+{% comment %}
+  For loops
+{% endcomment %}
+
+{% comment %} simple for loop {% endcomment %}
+{% for item in collection %}
+  {{ item }}
+{% endfor %}
+
+{% comment %} getting the index {% endcomment %}
+{% for item in collection %}
+  Index: {{ forloop.index }} - Item: {{ item }}
+{% endfor %}
+
+{% comment %}
+  looping using custom number values
+{% endcomment %}
+{% for i in (1..5) %}
+  Number: {{ i }}
+{% endfor %}
+
+{% comment %}
+  first and last item of the loop
+{% endcomment %}
+{% for item in collection %}
+  {% if forloop.first %}
+    First item: {{ item }}
+  {% endif %}
+  {% if forloop.last %}
+    Last item: {{ item }}
+  {% endif %}
+{% endfor %}
+
+{% comment %}
+  limit and skip (offset)
+{% endcomment %}
+{% for item in collection limit: 2 offset: 1 %}
+  {{ item }}
+{% endfor %}
+
+{% comment %}
+  loop in reverse order
+{% endcomment %}
+{% for item in collection reversed %}
+  {{ item }}
+{% endfor %}
+
+{% comment %}
+  break statement
+{% endcomment %}
+{% for item in collection %}
+  {% if item == 'banana' %}
+    {% break %}
+  {% endif %}
+  {{ item }}
+{% endfor %}
+
+{% comment %}
+  continue statement
+{% endcomment %}
+{% for item in collection %}
+  {% if item == 'banana' %}
+    {% break %}
+  {% endif %}
+  {{ item }}
+{% endfor %}

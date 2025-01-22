@@ -1,0 +1,59 @@
+{% comment %}
+  Comparison Operators
+{% endcomment %}
+
+{% assign a = 10 %}
+{% assign b = 20 %}
+
+<!-- Equality -->
+{% if a == b %}
+  a is equal to b
+{% else %}
+  a is not equal to b
+{% endif %}
+
+<!-- Inequality -->
+{% if a != b %}
+  a is not equal to b
+{% else %}
+  a is equal to b
+{% endif %}
+
+<!-- Greater than -->
+{% if a > b %}
+  a is greater than b
+{% else %}
+  a is not greater than b
+{% endif %}
+
+<!-- Less than -->
+{% if a < b %}
+  a is less than b
+{% else %}
+  a is not less than b
+{% endif %}
+
+<!-- Greater than or equal to -->
+{% if a >= b %}
+  a is greater than or equal to b
+{% else %}
+  a is less than b
+{% endif %}
+
+<!-- Less than or equal to -->
+{% if a <= b %}
+  a is less than or equal to b
+{% else %}
+  a is greater than b
+{% endif %}
+
+<!-- Contains (for strings and arrays) -->
+{% assign string = 'hello world' %}
+{% if string contains 'hello' %}
+  String contains "hello"
+{% endif %}
+
+{% comment %} lets assume product.tags is an array and sport is an element of that array which is a string {% endcomment %}
+{% if product.tags contains 'sports' %}
+  It is a sports product
+{% endif %}
