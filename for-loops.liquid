@@ -7,9 +7,20 @@
   {{ item }}
 {% endfor %}
 
-{% comment %} getting the index {% endcomment %}
+{% comment %} simple for else loop {% endcomment %}
+{% for item in collection %}
+  {{ item }}
+{% else %}
+  No items present
+{% endfor %}
+
+{% comment %}
+  getting the index (1 based or 0 based)
+{% endcomment %}
 {% for item in collection %}
   Index: {{ forloop.index }} - Item: {{ item }}
+  <br>
+  Index: {{ forloop.index0 }} - Item: {{ item }}
 {% endfor %}
 
 {% comment %}
